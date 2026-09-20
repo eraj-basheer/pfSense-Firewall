@@ -15,6 +15,17 @@ The objective was to create a segmented network environment containing an Intern
 - Learned that rule order is important when multiple rules could match the same traffic.
 - Learned how firewall logging can provide evidence of allowed and blocked traffic.
 
+•	Configure Hyper-V virtual networks
+•	Configure DHCP scopes
+•	Connect virtual machines to the appropriate networks
+•	Install pfSense
+•	Configure pfSense network interfaces
+•	Configure firewall rules
+•	Test allowed and blocked traffic
+•	Review firewall logging
+
+
+
 ## Lab Environment
 
 | Component | Purpose |
