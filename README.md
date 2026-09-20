@@ -1,11 +1,11 @@
-# pfSense-Firewall
+# pfSense Firewall Project
 
 
 ## Overview
 
 This lab involved installing and configuring pfSense in a Hyper-V virtual environment.
 
-The objective was to create a segmented network environment containing HR, Accounting, Sales and INTERNET/WAN networks, then configure and test firewall rules controlling traffic between these networks.
+The objective was to create a segmented network environment containing an Internal Company Network, DMZ Network, Security Testing Network and INTERNET/WAN in order to configure and test firewall rules controlling traffic between these networks.
 
 ## Key Learnings/Skills Learned
 
@@ -21,22 +21,20 @@ The objective was to create a segmented network environment containing HR, Accou
 |---|---|
 | pfSense | Firewall/router |
 | Debian | HR network client |
-| Metasploitable | Sales server |
-| Kali Linux | Accounting machine |
-| Hyper-V | Virtualisation platform |
+| Metasploitable | Sa|
+| Kali Linux |  |
+
 
 ## Network Topology
 
-| Network | Subnet | Purpose |
-|---|---|---|
-| BLUE | 192.168.1.0/24 | Internal network |
-| PURPLE | 10.30.0.0/24 | DMZ |
-| RED | 192.168.2.0/24 | Attacker network |
-| INTERNET/WAN | 192.168.0.0/24 | External network |
+| Network | Subnet |
+|---|---|
+| Internal network | 10.0.0.0/24 |
+| DMZ | 10.30.0.0/24 |
+| Security Testing Network | 192.168.2.0/24 | 
+| External network | 192.168.0.0/24 | 
 
 ### Network Diagram
-
-Add your own network diagram here.
 
 ![Network Diagram](screenshots/network-diagram.png)
 
