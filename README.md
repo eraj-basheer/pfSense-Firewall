@@ -7,33 +7,26 @@ This lab involved installing and configuring pfSense in a Hyper-V virtual enviro
 
 The objective was to create a segmented network environment containing an Internal Company Network, DMZ Network, Security Testing Network and INTERNET/WAN in order to configure and test firewall rules controlling traffic between these networks.
 
-## Key Learnings/Skills Learned
+## Objectives 
 
-- Learned how to configure pfSense as a virtual firewall.
-- Learned how separate virtual networks can be connected through pfSense.
-- Learned how firewall rules control traffic between network segments.
-- Learned that rule order is important when multiple rules could match the same traffic.
-- Learned how firewall logging can provide evidence of allowed and blocked traffic.
-
-•	Configure Hyper-V virtual networks
-•	Configure DHCP scopes
-•	Connect virtual machines to the appropriate networks
-•	Install pfSense
-•	Configure pfSense network interfaces
-•	Configure firewall rules
-•	Test allowed and blocked traffic
-•	Review firewall logging
-
+- Configure Hyper-V virtual networks
+- Configure DHCP scopes
+- Connect virtual machines to the appropriate networks
+- Install pfSense
+- Configure pfSense network interfaces
+- Configure firewall rules
+- Test allowed and blocked traffic
+- Review firewall logging
 
 
 ## Lab Environment
 
 | Component | Purpose |
 |---|---|
-| pfSense | Firewall/router |
-| Debian | HR network client |
-| Metasploitable | Sa|
-| Kali Linux |  |
+| pfSense | Firewall/Router |
+| Debian | Internal Network Client |
+| Metasploitable | DMZ Client |
+| Kali Linux | Security Testing/Attacker Machine |
 
 
 ## Network Topology
