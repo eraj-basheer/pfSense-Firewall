@@ -37,7 +37,7 @@ The objective was to create a segmented network environment containing an Intern
 
 ### Network Diagram
 
-![Network Diagram](01-network-diagram.png)
+<img src="01-network-diagram.png" width="300" height="200">
 
 ## Task 1 – Hyper-V Networking
 
