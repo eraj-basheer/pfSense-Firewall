@@ -9,14 +9,11 @@ The objective was to create a segmented network environment containing an Intern
 
 ## Objectives 
 
-- Configure Hyper-V virtual networks
-- Configure DHCP scopes
+- Configure VirtualBox virtual machines (Kali, Debian, pfSense, Metasploitable)
 - Connect virtual machines to the appropriate networks
-- Install pfSense
 - Configure pfSense network interfaces
 - Configure firewall rules
 - Test allowed and blocked traffic
-- Review firewall logging
 
 
 ## Lab Environment
@@ -33,10 +30,10 @@ The objective was to create a segmented network environment containing an Intern
 
 | Network | Subnet |
 |---|---|
-| Internal network | 10.0.0.0/24 |
-| DMZ | 10.30.0.0/24 |
+| WAN | 10.0.2.0/24 |
+| Internal Network | 192.168.1.0/24 |
+| DMZ Network | 10.30.0.0/24 | 
 | Security Testing Network | 192.168.2.0/24 | 
-| External network | 192.168.0.0/24 | 
 
 ### Network Diagram
 
