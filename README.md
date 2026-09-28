@@ -45,6 +45,7 @@ The objective was to create a segmented network environment containing an Intern
 ### pfSense
 
 Attached to: NAT, Internal Network
+
 Network Name: Internal Network, DMZ Network, Security Testing Network
 
 <img src="02-pfSense-configuration.png" width="500" height="557">
@@ -53,6 +54,7 @@ Network Name: Internal Network, DMZ Network, Security Testing Network
 ### Debian
 
 Attached to: Internal Network
+
 Network Name: Internal Network
 
 <img src="03-debian-configuration.png" width="500" height="557">
@@ -60,6 +62,7 @@ Network Name: Internal Network
 ### Metasploitable 
 
 Attached to: Internal Network
+
 Network Name: DMZ Network
 
 <img src="04-metasploitable-configuration.png" width="500" height="557">
@@ -67,6 +70,7 @@ Network Name: DMZ Network
 ### Kali 
 
 Attached to: Internal Network
+
 Network Name: Security Testing Network
 
 <img src="05-kali-configuration.png" width="500" height="557">
