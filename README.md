@@ -40,10 +40,10 @@ The objective was to create a segmented network environment containing an Intern
 
 <img src="01-network-diagram.png" width="500" height="474">
 
----
 
 ## Virtual Machine Configurations 
 
+Details of VirtualBox machine specifications are shown below:
 
 ### pfSense
 
@@ -82,35 +82,32 @@ Network Name: Security Testing Network
 
 ---
 
-## Task 1 – Virtual Machine Networking
+## pfSense Configuration
 
-I created the required internal virtual switches for the BLUE, PURPLE and RED networks.
+### Interface Assignment
 
-The virtual switches were configured as internal networks and connected to the appropriate pfSense interfaces.
+pfSense was installed and configured with four network interfaces.
 
-### Evidence
-
-![Hyper-V Virtual Switches](screenshots/01-network-switches.png)
-
-**Result:** The required virtual networks were successfully created.
-
----
-
-## Task 2 – Host Network Adapters
-
-The Hyper-V virtual Ethernet adapters were assigned static IP addresses.
-
-| Adapter | IP Address | Subnet Mask |
+| pfSense Interface | Network Interface | IPv4 Configuration |
 |---|---|---|
-| BLUE | 192.168.1.5 | 255.255.255.0 |
-| PURPLE | 10.30.0.5 | 255.255.255.0 |
-| RED | 192.168.2.5 | 255.255.255.0 |
+| WAN | WAN | DHCP |
+| LAN | INTERNAL | 192.168.1.1/24 |
+| OPT1 | DMZ | 10.30.0.1/24 |
+| OPT2 | CORPORATE | 192.168.2.1/24 |
 
-### Evidence
+<img src="06-pfSense-dashboard.png" width="500" height="457">
 
-![Host Network Adapters](screenshots/02-host-adapters.png)
 
----
+### Interface Configuration 
+
+| pfSense Interface | Network | IPv4 Configuration |
+|---|---|---|
+| WAN | WAN | DHCP |
+| LAN | INTERNAL | 192.168.1.1/24 |
+| OPT1 | DMZ | 10.30.0.1/24 |
+| OPT2 | CORPORATE | 192.168.2.1/24 |
+
+
 
 ## Task 3 – DHCP Scopes
 
@@ -129,20 +126,6 @@ DHCP scopes were created for the BLUE, PURPLE and RED networks.
 **Result:** The DHCP scopes were successfully created and activated.
 
 ---
-
-## Task 4 – Virtual Machine Connections
-
-The virtual machines were connected to their respective networks.
-
-| VM | Network | Expected IP |
-|---|---|---|
-| Debian | BLUE | 192.168.1.100 |
-| Metasploitable | PURPLE | 10.30.0.100 |
-| Kali | RED | 192.168.2.100 |
-
-### Evidence
-
-![VM Network Configuration](screenshots/04-vm-network-settings.png)
 
 ---
 
