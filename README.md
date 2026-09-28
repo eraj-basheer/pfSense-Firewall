@@ -25,6 +25,7 @@ The objective was to create a segmented network environment containing an Intern
 | Metasploitable | DMZ Client |
 | Kali Linux | Security Testing/Attacker Machine |
 
+---
 
 ## Network Topology
 
@@ -39,7 +40,7 @@ The objective was to create a segmented network environment containing an Intern
 
 <img src="01-network-diagram.png" width="500" height="474">
 
-
+---
 
 ## Virtual Machine Configurations 
 
@@ -79,7 +80,7 @@ Network Name: Security Testing Network
 
 <img src="05-kali-configuration.png" width="500" height="557">
 
-----
+---
 
 ## Task 1 – Virtual Machine Networking
 
