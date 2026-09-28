@@ -40,7 +40,9 @@ The objective was to create a segmented network environment containing an Intern
 <img src="01-network-diagram.png" width="500" height="474">
 
 
+
 ## Virtual Machine Configurations 
+
 
 ### pfSense
 
@@ -59,6 +61,7 @@ Network Name: Internal Network
 
 <img src="03-debian-configuration.png" width="500" height="557">
 
+
 ### Metasploitable 
 
 Attached to: Internal Network
@@ -66,6 +69,7 @@ Attached to: Internal Network
 Network Name: DMZ Network
 
 <img src="04-metasploitable-configuration.png" width="500" height="557">
+
 
 ### Kali 
 
