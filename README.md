@@ -3,9 +3,9 @@
 
 ## Overview
 
-This lab involved installing and configuring pfSense in a Hyper-V virtual environment.
+This lab involved installing and configuring pfSense in a Oracle VirtualBox environment.
 
-The objective was to create a segmented network environment containing an Internal Company Network, DMZ Network, Security Testing Network and INTERNET/WAN in order to configure and test firewall rules controlling traffic between these networks.
+The objective was to create a segmented network environment containing an Internal Company Network, DMZ Network, Security Testing Network and WAN in order to configure and test firewall rules controlling traffic between these networks.
 
 ## Objectives 
 
@@ -30,7 +30,7 @@ The objective was to create a segmented network environment containing an Intern
 
 | Network | Subnet |
 |---|---|
-| WAN | 10.0.2.0/24 |
+| WAN | DHCP |
 | Internal Network | 192.168.1.0/24 |
 | DMZ Network | 10.30.0.0/24 | 
 | Security Testing Network | 192.168.2.0/24 | 
@@ -39,7 +39,41 @@ The objective was to create a segmented network environment containing an Intern
 
 <img src="01-network-diagram.png" width="500" height="474">
 
-## Task 1 – Hyper-V Networking
+
+## Virtual Machine Configurations 
+
+### pfSense
+
+Attached to: NAT, Internal Network
+Network Name: Internal Network, DMZ Network, Security Testing Network
+
+<img src="" width="500" height="474">
+
+
+### Debian
+
+Attached to: Internal Network
+Network Name: Internal Network
+
+<img src="" width="500" height="474">
+
+### Metasploitable 
+
+Attached to: Internal Network
+Network Name: DMZ Network
+
+<img src="" width="500" height="474">
+
+### Kali 
+
+Attached to: Internal Network
+Network Name: Security Testing Network
+
+<img src="" width="500" height="474">
+
+----
+
+## Task 1 – Virtual Machine Networking
 
 I created the required internal virtual switches for the BLUE, PURPLE and RED networks.
 
