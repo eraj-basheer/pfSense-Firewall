@@ -95,7 +95,7 @@ pfSense was installed successfully and the network interfaces were assigned corr
 | OPT1 | em2 | DMZ | 
 | OPT2 | em3 | CORPORATE | 
 
-<img src="06-interface-assignment" width="500" height="333">
+<img src="06-interface-assignment.png" width="500" height="333">
 
 ### Interface IP Assignment
 
