@@ -86,19 +86,20 @@ Network Name: Security Testing Network
 
 ### Interface Assignment
 
-pfSense was installed and configured with four network interfaces.
+pfSense was installed successfully and the network interfaces were assigned correctly according to the network design.
 
-| pfSense Interface | Network Interface | IPv4 Configuration |
+| pfSense Interface | Port | Network | 
 |---|---|---|
-| WAN | WAN | DHCP |
-| LAN | INTERNAL | 192.168.1.1/24 |
-| OPT1 | DMZ | 10.30.0.1/24 |
-| OPT2 | CORPORATE | 192.168.2.1/24 |
+| WAN | em0 | WAN |
+| LAN | em1 | INTERNAL | 
+| OPT1 | em2 | DMZ | 
+| OPT2 | em3 | CORPORATE | 
 
-<img src="06-pfSense-dashboard.png" width="500" height="457">
+<img src="06-interface-assignment" width="500" height="333">
 
+### Interface IP Assignment
 
-### Interface Configuration 
+The interface IP addresses are then set according to the table below:
 
 | pfSense Interface | Network | IPv4 Configuration |
 |---|---|---|
@@ -108,6 +109,9 @@ pfSense was installed and configured with four network interfaces.
 | OPT2 | CORPORATE | 192.168.2.1/24 |
 
 
+<img src="07-pfSense-dashboard.png" width="500" height="457">
+
+---
 
 ## Task 3 – DHCP Scopes
 
