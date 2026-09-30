@@ -126,13 +126,13 @@ Firewall rules were configured on the CORPORATE interface to allow only web traf
 
 - On the aliases page (under the firewall menu), I created a new alias named WEB, and added port 80 (HTTP), 443 (HTTPS) and 53 (DNS)
 
-<img src="07-pfSense-dashboard.png" width="500" height="457">
+<img src="09-WEB-alias.png" width="500" height="457">
 
 - On the firewall rules page, under the CORPORATE network, I disabled the second rule, which allows all traffic from the CORPORATE network to any
 destination. I disabled this rule to create one that allows only WEB traffic to other networks.
 - Then, I added a new CORPORATE rule, with the protocol set to TCP/UDP and then under destination port range I entered the WEB alias.
 
-<img src="07-pfSense-dashboard.png" width="500" height="457">
+<img src="10-corporate-firewall-rules.png" width="500" height="457">
 
 #### Testing:
 
