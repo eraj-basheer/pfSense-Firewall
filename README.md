@@ -171,22 +171,13 @@ Connectivity was tested between the Metasploitable VM and the other networks.
 
 ## Firewall Testing Results
 
-| Test | Expected Result | Actual Result |
+| Test | Result | 
 |---|---|---|
-| RED → BLUE | Blocked | [PASS/FAIL] |
-| RED → PURPLE | Allowed | [PASS/FAIL] |
-| PURPLE → BLUE | Blocked | [PASS/FAIL] |
-| PURPLE → RED | Allowed | [PASS/FAIL] |
-| BLUE → PURPLE | Allowed where rule permits | [PASS/FAIL] |
-
-## Firewall Logs
-
-Firewall logs were reviewed to confirm that traffic was being handled according to the configured rules.
-
-![Firewall Logs](screenshots/11-firewall-logs.png)
-
+| CORPORATE → DMZ | Allow only WEB traffic | 
+| DMZ → SECURITY | Allow |
+| DMZ → CORPORATE | Block |
 
 
 ## Conclusion
 
-This lab demonstrated the configuration and testing of a pfSense firewall in a virtualised network environment. The firewall was used to control communication between internal, DMZ and security testing networks. Testing confirmed that the configured firewall rules could allow or block traffic according to the required security policy.
+This lab demonstrated the configuration and testing of a pfSense firewall in a virtualised network environment. The firewall was used to control communication between CORPORATE, DMZ and SECURITY networks. Testing confirmed that the configured firewall rules could allow or block traffic according to the required security policy.
