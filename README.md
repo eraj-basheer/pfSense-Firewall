@@ -172,7 +172,7 @@ Connectivity was tested between the Metasploitable VM and the other networks.
 ## Firewall Testing Results
 
 | Test | Result | 
-|---|---|---|
+|---|---|
 | CORPORATE → DMZ | Allow only WEB traffic | 
 | DMZ → SECURITY | Allow |
 | DMZ → CORPORATE | Block |
