@@ -21,7 +21,7 @@ The objective was to create a segmented network environment containing an Intern
 | Component | Purpose |
 |---|---|
 | pfSense | Firewall/Router |
-| Debian | Internal Network Client |
+| Debian | Internal Corporate Network Client |
 | Metasploitable | DMZ Client |
 | Kali Linux | Security Testing/Attacker Machine |
 
@@ -91,9 +91,9 @@ pfSense was installed successfully and the network interfaces were assigned corr
 | pfSense Interface | Port | Network | 
 |---|---|---|
 | WAN | em0 | WAN |
-| LAN | em1 | INTERNAL | 
+| LAN | em1 | CORPORATE | 
 | OPT1 | em2 | DMZ | 
-| OPT2 | em3 | CORPORATE | 
+| OPT2 | em3 | SECURITY | 
 
 <img src="06-interface-assignment.png" width="500" height="333">
 
@@ -104,74 +104,37 @@ The interface IP addresses are then set according to the table below:
 | pfSense Interface | Network | IPv4 Configuration |
 |---|---|---|
 | WAN | WAN | DHCP |
-| LAN | INTERNAL | 192.168.1.1/24 |
+| LAN | CORPORATE | 192.168.1.1/24 |
 | OPT1 | DMZ | 10.30.0.1/24 |
-| OPT2 | CORPORATE | 192.168.2.1/24 |
+| OPT2 | SECURITY | 192.168.2.1/24 |
 
 
 <img src="07-pfSense-dashboard.png" width="500" height="457">
 
 ---
 
-## Task 3 – DHCP Scopes
 
-DHCP scopes were created for the BLUE, PURPLE and RED networks.
+## Firewall Rules
 
-| Network | DHCP Range | Gateway |
-|---|---|---|
-| BLUE | 192.168.1.100–192.168.1.200 | 192.168.1.1 |
-| PURPLE | 10.30.0.100–10.30.0.200 | 10.30.0.1 |
-| RED | 192.168.2.100–192.168.2.200 | 192.168.2.1 |
+After connecting to the pfSense webConfigurator, I renamed the interfaces to appear as shown below:
 
-### Evidence
+<img src="08-renamed-interfaces.png" width="400" height="391">
 
-![DHCP Scopes](screenshots/03-dhcp-scopes.png)
+### CORPORATE Network Rules
 
-**Result:** The DHCP scopes were successfully created and activated.
+Firewall rules were configured on the CORPORATE interface to allow only web traffic to all destinations.
 
----
+- On the aliases page (under the firewall menu), I created a new alias named WEB, and added port 80 (HTTP), 443 (HTTPS) and 53 (DNS)
 
----
+<img src="07-pfSense-dashboard.png" width="500" height="457">
 
-## Task 5 – pfSense Installation and Configuration
+- On the firewall rules page, under the CORPORATE network, I disabled the second rule, which allows all traffic from the CORPORATE network to any
+destination. I disabled this rule to create one that allows only WEB traffic to other networks.
+- Then, I added a new CORPORATE rule, with the protocol set to TCP/UDP and then under destination port range I entered the WEB alias.
 
-A pfSense virtual machine was created in Hyper-V with four network adapters.
+<img src="07-pfSense-dashboard.png" width="500" height="457">
 
-The adapters were connected to:
-
-1. BLUE
-2. PURPLE
-3. RED
-4. INTERNET/WAN
-
-### pfSense Interfaces
-
-| pfSense Interface | Network | IP Address |
-|---|---|---|
-| BLUELAN | BLUE | 192.168.1.1/24 |
-| PURPLE_DMZ | PURPLE | 10.30.0.1/24 |
-| REDLAN | RED | 192.168.2.1/24 |
-| INTERNETWAN | WAN | DHCP |
-
-### Evidence
-
-![pfSense Interfaces](screenshots/05-pfsense-interfaces.png)
-
-**Result:** pfSense was successfully installed and configured with four network interfaces.
-
----
-
-# Task 6 – Firewall Rules
-
-## BLUE Network Rules
-
-Firewall rules were configured on the BLUE interface to control traffic between the internal network and the PURPLE/DMZ network.
-
-### Evidence
-
-![BLUE Firewall Rules](screenshots/06-blue-firewall-rules.png)
-
-### Testing
+#### Testing:
 
 I tested connectivity from the Debian VM to the Metasploitable VM using:
 
@@ -181,28 +144,26 @@ telnet <METASPLOITABLE-IP>
 
 and HTTP access using a web browser.
 
-### Result
+#### Result
 
 The Telnet connection was blocked/time-out occurred while HTTP access remained available according to the configured firewall rules.
 
-![BLUE Firewall Test](screenshots/07-blue-firewall-test.png)
+<img src="07-pfSense-dashboard.png" width="500" height="457">
 
 ---
 
-## PURPLE Network Rules
+### DMZ Network Rules
 
-The PURPLE network was configured with:
+The DMZ network was configured with:
 
-- A block rule preventing traffic from PURPLE to BLUE
+- A block rule preventing traffic from DMZ to INTERNAL
 - A pass rule allowing other traffic
 
 The block rule was placed above the pass rule so that the specific blocked traffic was processed first.
 
-### Evidence
+<img src="07-pfSense-dashboard.png" width="500" height="457">
 
-![PURPLE Firewall Rules](screenshots/08-purple-firewall-rules.png)
-
-### Testing
+#### Testing
 
 Connectivity was tested between the Metasploitable VM and the other networks.
 
@@ -210,25 +171,11 @@ Connectivity was tested between the Metasploitable VM and the other networks.
 
 - PURPLE → BLUE = blocked
 - PURPLE → other permitted destinations = allowed
-
-![PURPLE Firewall Test](screenshots/09-purple-firewall-test.png)
-
----
-
-## RED Network Rules
-
-The RED network was configured with:
-
-- Block all IPv4 traffic from RED to BLUE
-- Allow all IPv4 traffic from RED to other destinations
-
-Firewall logging was enabled for these rules so that allowed and blocked traffic could be recorded.
-
-### Evidence
-
-![RED Firewall Rules](screenshots/10-red-firewall-rules.png)
+- 
+<img src="07-pfSense-dashboard.png" width="500" height="457">
 
 ---
+
 
 ## Firewall Testing Results
 
@@ -250,4 +197,4 @@ Firewall logs were reviewed to confirm that traffic was being handled according 
 
 ## Conclusion
 
-This lab demonstrated the configuration and testing of a pfSense firewall in a virtualised network environment. The firewall was used to control communication between internal, DMZ and attacker networks. Testing confirmed that the configured firewall rules could allow or block traffic according to the required security policy.
+This lab demonstrated the configuration and testing of a pfSense firewall in a virtualised network environment. The firewall was used to control communication between internal, DMZ and security testing networks. Testing confirmed that the configured firewall rules could allow or block traffic according to the required security policy.
