@@ -137,19 +137,10 @@ destination. I disabled this rule to create one that allows only WEB traffic to 
 
 #### Testing:
 
-I tested connectivity from the Debian VM to the Metasploitable VM using:
-
-```bash
-telnet <METASPLOITABLE-IP>
-```
-
-and HTTP access using a web browser.
-
-#### Result
-
+To test if the rules were implemented, I tested connectivity from the Debian VM to the Metasploitable VM using telnet and HTTP access using a web browser. 
 The Telnet connection was blocked/time-out occurred while HTTP access remained available according to the configured firewall rules.
 
-<img src="07-pfSense-dashboard.png" width="500" height="457">
+<img src="11-corporate-rule-testing.png" width="500" height="385">
 
 ---
 
@@ -157,23 +148,23 @@ The Telnet connection was blocked/time-out occurred while HTTP access remained a
 
 The DMZ network was configured with:
 
-- A block rule preventing traffic from DMZ to INTERNAL
+- A block rule preventing traffic from DMZ to CORPORATE
 - A pass rule allowing other traffic
 
 The block rule was placed above the pass rule so that the specific blocked traffic was processed first.
 
-<img src="07-pfSense-dashboard.png" width="500" height="457">
+<img src="12-dmz-firewall-rules.png" width="500" height="430">
 
 #### Testing
 
 Connectivity was tested between the Metasploitable VM and the other networks.
 
-**Expected result:**
+- Ping from Metasploitable VM to Kali VM was successful
+- Ping from Metasploitable VM to Debian VM was unsuccessful
+ 
+<img src="13-dmz-rule-test-1.png" width="500" height="200">
+<img src="14-dmz-rule-test-2" width="500" height="200">
 
-- PURPLE → BLUE = blocked
-- PURPLE → other permitted destinations = allowed
-- 
-<img src="07-pfSense-dashboard.png" width="500" height="457">
 
 ---
 
