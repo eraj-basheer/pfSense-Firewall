@@ -3,7 +3,7 @@
 
 ## Overview
 
-This lab involved installing and configuring pfSense in a Oracle VirtualBox environment.
+This lab involved installing and configuring pfSense in an Oracle VirtualBox environment.
 
 The objective was to create a segmented network environment containing an Internal Company Network, DMZ Network, Security Testing Network and WAN in order to configure and test firewall rules controlling traffic between these networks.
 
@@ -116,7 +116,7 @@ The interface IP addresses are then set according to the table below:
 
 ## Firewall Rules
 
-After connecting to the pfSense webConfigurator, I renamed the interfaces to appear as shown below:
+After connecting to the pfSense WebConfigurator, I renamed the interfaces to appear as shown below:
 
 <img src="08-renamed-interfaces.png" width="400" height="391">
 
