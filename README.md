@@ -108,17 +108,17 @@ The interface IP addresses are then set by choosing option 2 on the pfSense menu
 | OPT1 | DMZ | 10.30.0.1/24 | 10.30.0.100 - 10.30.0.200 |
 | OPT2 | SECURITY | 192.168.2.1/24 | 192.168.2.100 - 192.168.2.200 |
 
-
 <img src="07-pfSense-dashboard.png" width="500" height="457">
+
+<br> 
+After connecting to the pfSense WebConfigurator, the interfaces were renamed to appear as shown below:
+
+<img src="08-renamed-interfaces.png" width="400" height="391">
 
 ---
 
 
 ## Firewall Rules
-
-After connecting to the pfSense WebConfigurator, the interfaces were renamed to appear as shown below:
-
-<img src="08-renamed-interfaces.png" width="400" height="391">
 
 ### CORPORATE Network Rules
 
