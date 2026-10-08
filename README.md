@@ -97,6 +97,8 @@ pfSense was installed successfully and then network interfaces were assigned by 
 
 <img src="06-interface-assignment.png" width="500" height="333">
 
+<br>
+
 ### Interface IP Assignment
 
 The interface IP addresses are then set by choosing option 2 on the pfSense menu and inputing the following details:
