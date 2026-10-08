@@ -116,7 +116,7 @@ The interface IP addresses are then set according to the table below:
 
 ## Firewall Rules
 
-After connecting to the pfSense WebConfigurator, I renamed the interfaces to appear as shown below:
+After connecting to the pfSense WebConfigurator, the interfaces were renamed to appear as shown below:
 
 <img src="08-renamed-interfaces.png" width="400" height="391">
 
@@ -124,14 +124,14 @@ After connecting to the pfSense WebConfigurator, I renamed the interfaces to app
 
 Firewall rules were configured on the CORPORATE interface to allow only web traffic to all destinations.
 
-- On the aliases page (under the firewall menu), I created a new alias named WEB, and added port 80 (HTTP), 443 (HTTPS) and 53 (DNS)
+- On the aliases page (under the firewall menu), create a new alias named WEB, and add port 80 (HTTP), 443 (HTTPS) and 53 (DNS).
 
 <img src="09-WEB-alias.png" width="500" height="476">
 <br>
 
-- On the firewall rules page, under the CORPORATE network, I disabled the second rule, which allows all traffic from the CORPORATE network to any
-destination. I disabled this rule to create one that allows only WEB traffic to other networks.
-- Then, I added a new CORPORATE rule, with the protocol set to TCP/UDP and then under destination port range I entered the WEB alias.
+- On the firewall rules page, under the CORPORATE network, disable the second rule, which allows all traffic from the CORPORATE network to any
+destination. This rule was disabled to create one that allows only WEB traffic to other networks.
+- Then, a new CORPORATE rule was added, with the protocol set to TCP/UDP and the destination port range set as the WEB alias.
 
 <img src="10-corporate-firewall-rules.png" width="500" height="473">
 
@@ -151,7 +151,7 @@ The DMZ network was configured with:
 - A block rule preventing traffic from DMZ to CORPORATE
 - A pass rule allowing other traffic
 
-The block rule was placed above the pass rule so that the specific blocked traffic was processed first.
+The block rule was placed above the pass rule to ensure the specific blocked traffic was processed first.
 
 <img src="12-dmz-firewall-rules.png" width="500" height="430">
 
