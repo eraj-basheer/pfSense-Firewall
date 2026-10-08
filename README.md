@@ -112,7 +112,7 @@ The interface IP addresses are then set by choosing option 2 on the pfSense menu
 
 <br> 
 After connecting to the pfSense WebConfigurator, the interfaces were renamed to appear as shown below:
-
+<br>
 <img src="08-renamed-interfaces.png" width="400" height="391">
 
 ---
