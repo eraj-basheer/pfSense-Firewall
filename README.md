@@ -99,7 +99,7 @@ pfSense was installed successfully and then network interfaces were assigned by 
 
 ### Interface IP Assignment
 
-The interface IP addresses are then set by choosing option 2 on the pfSense menu according to the table below:
+The interface IP addresses are then set by choosing option 2 on the pfSense menu and inputing the following details:
 
 | pfSense Interface | Network | IPv4 Configuration | DHCP Range |
 |---|---|---|---|
