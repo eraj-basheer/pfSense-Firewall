@@ -86,7 +86,7 @@ Network Name: Security Testing Network
 
 ### Interface Assignment
 
-pfSense was installed successfully and the network interfaces were assigned according to the network design.
+pfSense was installed successfully and then network interfaces were assigned by selecting option 1 on the pfSense menu. The interfaces were set according to the network design as described in the table below.
 
 | pfSense Interface | Port | Network | 
 |---|---|---|
@@ -99,14 +99,14 @@ pfSense was installed successfully and the network interfaces were assigned acco
 
 ### Interface IP Assignment
 
-The interface IP addresses are then set according to the table below:
+The interface IP addresses are then set by choosing option 2 on the pfSense menu according to the table below:
 
 | pfSense Interface | Network | IPv4 Configuration | DHCP Range |
-|---|---|---|
+|---|---|---|---|
 | WAN | WAN | DHCP | |
-| LAN | CORPORATE | 192.168.1.1/24 | 192.168.1.0 - 192.168.1.100 |
-| OPT1 | DMZ | 10.30.0.1/24 | 10.30.0.1 - 10.30.0.100 |
-| OPT2 | SECURITY | 192.168.2.1/24 | 192.168.2.1 - 192.168.2.100 |
+| LAN | CORPORATE | 192.168.1.1/24 | 192.168.1.100 - 192.168.1.200 |
+| OPT1 | DMZ | 10.30.0.1/24 | 10.30.0.100 - 10.30.0.200 |
+| OPT2 | SECURITY | 192.168.2.1/24 | 192.168.2.100 - 192.168.2.200 |
 
 
 <img src="07-pfSense-dashboard.png" width="500" height="457">
