@@ -169,7 +169,6 @@ Connectivity was tested between the Metasploitable VM and the other networks.
 <img src="13-dmz-rule-test-1.png" width="500" height="200">
 <img src="14-dmz-rule-test-2" width="500" height="200">
 
-
 ---
 
 
