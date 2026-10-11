@@ -41,7 +41,7 @@ The objective was to create a segmented network environment containing an Intern
 <img src="01-network-diagram.png" width="500" height="474">
 
 
-## Virtual Machine Configurations 
+## 1. Virtual Machine Configurations 
 
 Details of VirtualBox machine specifications are shown below:
 
@@ -82,7 +82,7 @@ Network Name: Security Testing Network
 
 ---
 
-## pfSense Configuration
+## 2. pfSense Configuration
 
 ### Interface Assignment
 
@@ -122,7 +122,7 @@ After connecting to the pfSense WebConfigurator, the interfaces were renamed to 
 ---
 
 
-## Firewall Rules
+## 3. Firewall Rules
 
 ### CORPORATE Network Rules
 
@@ -173,7 +173,7 @@ Connectivity was tested between the Metasploitable VM and the other networks.
 ---
 
 
-## Firewall Testing Results
+## 4. Firewall Testing Results
 
 | Test | Result | 
 |---|---|
